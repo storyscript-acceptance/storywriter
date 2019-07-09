@@ -1,0 +1,31 @@
+omg: 1
+info:
+  version: 0.0.1
+  title: Storywriter
+  description: An http service to interpolate stories
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+lifecycle:
+  startup:
+    command: ["/storywriter"]
+actions:
+  story:
+    http:
+      port: 9000
+      method: post
+      path: /write
+    help: Writes a story from a template and optional set of words
+    arguments:
+      words:
+        help: Words to interpolate
+        type: list
+        in: requestBody
+      template:
+        help: Story template
+        type: string
+        in: requestBody
+        required: true
+    output:
+     type: string
+
