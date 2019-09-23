@@ -10,7 +10,7 @@ lifecycle:
   startup:
     command: ["/storywriter"]
 actions:
-  story:
+  write:
     http:
       port: 9000
       method: post
